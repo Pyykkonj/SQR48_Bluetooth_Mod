@@ -4,6 +4,8 @@ Detailed description coming soon.
 
 This is a freetime modification/extension for Blaupunkt Kingston SQR48 head unit from 80's to add bluetooth functionality on it. The main principle was to keep the head unit appearance untouched. No external signals for added bluetooth are shown, so it will fit perfectly on restored 80's era car.
 
+![Cover picture](/Hardware/Images/Cover.jpg)
+
 ## Disclaimer
 
 This is developed for my own needs and might include bugs. I'm not responsible if your cat dies.
@@ -27,6 +29,8 @@ Coming soon.
 ## Software
 
 Coming soon
+
+The software is written using Visual Studio Code and PlatformIO extensions with arduino framework.
 
 ## Known bugs
 
