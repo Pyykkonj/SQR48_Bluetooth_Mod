@@ -2,7 +2,7 @@
 
 This is a freetime modification/extension for Blaupunkt Kingston SQR48 head unit from 80's to add bluetooth functionality on it. The main principle was to keep the head unit appearance untouched. No external signals for added bluetooth are shown, so it will fit perfectly on restored 80's era car.
 
-![Cover picture](/Hardware/Images/Cover.jpg)
+![Cover picture](./Hardware/Images/Cover.jpg)
 
 ## Disclaimer
 
@@ -25,7 +25,7 @@ Because I didn't wanted add any extra buttons or control for the bluetooth, all 
 The hardware is built around ESP32 module and is quite simple. Parts addition to ESP32 are 5V voltage regulator, PCM5102 Digital-to-analog converter and resistor diviters for inputs. Schematic can be found from (/Hardware/Schematic/Schematic.pdf).
 
 Below is shown the module wired on breadboard.
-![Picture of the module](/Hardware/Images/module_overall_V1.jpg)
+![Picture of the module](./Hardware/Images/module_overall_V1.jpg)
 1. 5V Voltage regulator
 2. ESP32
 3. PCM5102 DAC
@@ -34,7 +34,7 @@ Below is shown the module wired on breadboard.
 6. Connector to Head unit's "CD-in" port
 
 The Head Unit has following connections behind:
-![Head Unit's connectors](/Hardware/Images/Head_unit_connections2.jpg)
+![Head Unit's connectors](./Hardware/Images/Head_unit_connections2.jpg)
 1. Antenna in
 2. Speakers out
 3. CD-in
@@ -58,11 +58,32 @@ To get Cassette player's next/prev buttons to control the bluetooth, I soldered 
 
 So the button's signals are routed to ESP32 via voltage dividers, which states are monitored by software. No changes were made for the original function, so the buttons also works as initially meant for cassette control when playing cassettes.
 
+### UPDATE: Hardware version 1.1
+
+After the first prototype done in breadboard, I created a better design with proper pcb. The design was initited to fit into plastic enclouser.
+
+The design version 1.1 improved the overall physical durability against environment in a car and electrical charachteristics with proper ground plane and digital and analog separation. There is a VGA-connector for the cable connecting the module to the headunit. An additional heatsink was used to cool down the 5V voltage requlator. The functionality and software was left untouched from the previous breadboard design.
+
+![Module_V1.1](./Hardware/Images/Module_V1.1.jpg)
+Picture of the module version 1.1 and it's enclosure. 
+
+
+![Module_V1.1_connected_to_headunit](./Hardware/Images/Module_V1.1_connected_to_headunit.jpg)
+Picture of the module version 1.1 connected to the headunit.
+
+
+![Module_V1.1_heatsink](./Hardware/Images/Module_V1.1_heatsink.jpg)
+Heatsink for voltage regulator.
+
 ## Software
 
-Coming soon
-
 The software is written using Visual Studio Code and PlatformIO extensions with arduino framework.
+
+The root of the software is pschatzmann's ESP32-A2DP library. 
+
+https://github.com/pschatzmann/ESP32-A2DP
+
+Big thanks for pschatzmann providing this awesome library!
 
 ## Known bugs
 
@@ -70,3 +91,5 @@ The software is written using Visual Studio Code and PlatformIO extensions with 
 
 ## Changelog
 * 5.9.2021 Created initial Github repo
+* 2.7.2022 Added software sources
+* 2.7.2023 Added V1.1 hardware schematics & updated readme
